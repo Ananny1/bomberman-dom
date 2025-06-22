@@ -1,0 +1,239 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #1b1b1b;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  background-color: black;
+  justify-content: center;
+  align-items: center;
+}
+
+#game-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 1700px;
+}
+
+#gameContainer {
+  display: grid;
+  height: 1020px;
+  width: 950px;
+  grid-template-columns: repeat(17, 1fr);
+  grid-template-rows: repeat(17, 1fr);
+  position: relative;
+}
+
+#chat-container {
+  width: 500px;
+  height: 1020px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.box {
+  width: 60px;
+  height: 60px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#player-1 {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+#player-1-image {
+  position: absolute;
+  top: -40px; 
+  left: -8px;
+  pointer-events: none;
+  width: 48px;
+  z-index: 2;
+
+}
+#player-2 {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+#player-2-image {
+  position: absolute;
+  top: -40px; 
+  left: -8px;
+  pointer-events: none;
+  width: 48px;
+  z-index: 2;
+  filter: hue-rotate(90deg); 
+
+}#player-3 {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+#player-3-image {
+  position: absolute;
+  top: -40px; 
+  left: -8px;
+  pointer-events: none;
+  width: 48px;
+  z-index: 2;
+    filter: hue-rotate(190deg);
+
+}#player-4 {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+#player-4-image {
+  position: absolute;
+  top: -40px; 
+  left: -8px;
+  pointer-events: none;
+  width: 48px;
+  z-index: 2;
+
+    filter: hue-rotate(300deg); 
+
+}
+.chat-box {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  border: 3px solid #ffcc00;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(255, 204, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-header {
+  background: rgba(255, 0, 0, 0.8);
+  color: white;
+  padding: 15px;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.message {
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.message.own-message {
+  background-color: rgba(220, 248, 198, 0.7);
+  align-self: flex-end;
+}
+
+.message.other-message {
+  background-color: rgba(255, 255, 255, 0.3);
+  align-self: flex-start;
+}
+
+.message.bot {
+  background: rgba(255, 255, 255, 0.3);
+  font-weight: bold;
+}
+
+.chat-input {
+  display: flex;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+#chatInput {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+}
+
+button {
+  background: #ff6600;
+  border: none;
+  padding: 5px 20px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-left: 8px;
+  box-shadow: 0 0 8px rgba(255, 102, 0, 0.7);
+  margin-top: 0;
+}
+
+button:hover {
+  background: #ff3300;
+}
+/* Footer Styling */
+#footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px; /* Adjust height as needed */
+  background: rgba(0, 0, 0, 0.7); /* Dark background with transparency */
+  border-top: 2px solid rgba(255, 204, 0, 0.6); /* Subtle glowing border */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px; /* Add some padding */
+  box-shadow: 0 -5px 15px rgba(255, 204, 0, 0.3); /* Subtle glow effect */
+  z-index: 3; /* Ensure it stays above other elements */
+}
+
+#countdown {
+  font-size: 18px;
+  color: #ffcc00; /* Bright yellow text for countdown */
+  font-weight: bold;
+  text-shadow: 0 0 5px rgba(255, 204, 0, 0.8); /* Glow effect for text */
+}
+
+#player-lives {
+  display: flex;
+  gap: 20px; /* Space between player lives */
+}
+
+#player-lives div {
+  font-size: 16px;
+  color: white; /* White text for player lives */
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.6); /* Glow effect for text */
+}
